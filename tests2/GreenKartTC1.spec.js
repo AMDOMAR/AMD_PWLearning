@@ -12,7 +12,6 @@ const product = page.locator('.product').filter({has: page.locator('h4.product-n
     for (let i = 1; i < quantity; i++) {
         await product.locator('.increment').click();
     }
-
     await expect(product.locator('.quantity')).toHaveValue(quantity);
 
     await product.getByRole('button', { name: 'ADD TO CART' }).click();
