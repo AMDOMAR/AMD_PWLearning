@@ -6,7 +6,7 @@ import { createHook } from 'node:async_hooks';
  * @see https://playwright.dev/docs/test-configuration
  */
  const config = ({ 
-  testDir: './tests',
+  testDir: './tests2',
   timeout: 30_000, 
   expect: {
     timeout: 5000, 
