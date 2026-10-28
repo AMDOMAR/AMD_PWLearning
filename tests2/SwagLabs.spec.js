@@ -10,8 +10,8 @@ const username = (await page.locator('#login_credentials').innerText()).split("\
 console.log(username);
 const password = (await page.locator('.login_password').innerText()).split("\n").at(1);
 console.log(password);
-await page.locator('#user-name').fill(username);
-await page.locator('#password').fill(password);
+await page.getByPlaceholder('Username').fill(username);
+await page.getByPlaceholder('Password').fill(password);
 await page.getByRole('button', { name: 'Login' }).click();
 await expect(page).toHaveTitle(PageTitle);
 await page.locator(".inventory_list").waitFor();
