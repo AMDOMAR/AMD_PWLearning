@@ -33,9 +33,9 @@ await page.getByRole("button", {name: 'PROCEED TO CHECKOUT'}).click();
 
 //Verify Product in Orders Page
 async function VerifyProductInOrders(page, productName) {
-const row = page.locator('tbody tr').filter({hasText: productName});
+const ProductNameField = page.locator('tbody tr td');
 
-await expect(row).toBeVisible();
+await expect(ProductNameField.locator('.product-name')).toContainText(productName);
 }
 await VerifyProductInOrders (page, 'Onion');
 
